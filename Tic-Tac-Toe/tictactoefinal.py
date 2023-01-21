@@ -25,6 +25,7 @@ grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 # Set current player
 current_player = "X"
 
+
 def check_winner():
     # Check rows
     for row in grid:
@@ -50,11 +51,13 @@ def check_winner():
         return diags[0]
     return 0
 
+
 def check_draw():
     for row in grid:
         if 0 in row:
             return False
     return True
+
 
 game_over = False
 
@@ -118,12 +121,15 @@ while running:
 
     # Display the scores
     font = pygame.font.SysFont("Comic sans", 20)
-    text = font.render("Player X: " + str(playerX_score) + "  Player O: " + str(playerO_score), True, (255, 255, 255))
+    text = font.render("Player X: " + str(playerX_score) +
+                       "  Player O: " + str(playerO_score),
+                       True, (255, 255, 255))
     screen.blit(text, (15, 700))
 
     # Display the current player
     font = pygame.font.SysFont("Comic sans", 20)
-    text = font.render("Current player: " + str(current_player), True, (255, 255, 255))
+    text = font.render("Current player: " + str(current_player),
+                       True, (255, 255, 255))
     screen.blit(text, (570, 700))
 
     # Update the display
@@ -135,12 +141,13 @@ while running:
             text = font.render("Draw!", True, (255, 255, 255))
             screen.blit(text, (330, 346))
         else:
-            text = font.render("Player " + str(winner_player) + " wins!", True, (255, 255, 255))
+            text = font.render("Player " + str(winner_player) + " wins!",
+                               True, (255, 255, 255))
             screen.blit(text, (255, 346))
         if winner_player == "X":
             playerX_score += 1
         elif winner_player == "O":
-            playerO_score +=1
+            playerO_score += 1
         pygame.display.flip()
         pygame.time.wait(3000)
 
