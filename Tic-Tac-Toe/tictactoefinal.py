@@ -92,6 +92,7 @@ if __name__ == "__main__":
                 if grid[y][x] == 0:
                     # Fill in the spot with the current player's symbol
                     grid[y][x] = current_player
+                    # Add sound effect when placing the symbol
                     place_sound.play()
 
                     # Check for winner
